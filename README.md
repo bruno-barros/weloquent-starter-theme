@@ -1,4 +1,4 @@
-weloquent-theme-base
+weloquent starter theme
 ====================
 
-Bootstrap theme fot w.eloquent project
+Bootstrap theme for w.eloquent project.

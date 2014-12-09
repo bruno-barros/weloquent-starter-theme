@@ -1,0 +1,24 @@
+{
+	"name": "bruno-barros/weloquent-theme-base",
+	"description": "Wordpress integrated with Laravel via Composer. Together, but independents.",
+	"keywords": ["Theme", "weloquent", "w.eloquent", "framework", "WordPress"],
+	"license": "GPL-2.0+",
+	"authors": [
+		{
+			"name": "Bruno Barros",
+			"email": "bruno@brunobarros.com",
+			"homepage": "http://www.brunobarros.com/"
+		}
+	],
+	"type": "wordpress-theme",
+	"autoload": {
+		"psr-4": {
+		}
+	},
+	"require": {
+		"php": ">=5.4",
+		"composer/installers": "~1.0"
+	},
+	"minimum-stability" : "dev",
+	"prefer-stable": true
+}

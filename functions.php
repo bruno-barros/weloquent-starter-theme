@@ -1,0 +1,11 @@
+<?php
+/**
+ * Base theme
+ */
+
+// ... silence.
+
+
+
+
+
