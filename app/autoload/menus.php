@@ -30,7 +30,7 @@ Menu::add('primary', 'Primary menu',
 		'link_after'      => '',
 		'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 		'depth'           => 0,
-		'walker'          => new \Framework\Support\Navigation\BootstrapMenuWalker
+		'walker'          => new \Weloquent\Support\Navigation\BootstrapMenuWalker
 	));
 
 
