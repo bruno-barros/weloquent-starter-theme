@@ -17,7 +17,7 @@ class ExampleTest extends TestCase{
 	 */
 	public function it_should_be_true()
 	{
-		$this->assertTrue(true);
+		assertTrue(true);
 	}
 
 
