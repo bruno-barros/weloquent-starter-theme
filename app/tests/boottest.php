@@ -1,5 +1,6 @@
 <?php
-
+define( 'WPINC', 'wp-includes' );
+define( 'THEME_TEST_ENV', true );
 defined('DS') ? DS : define('DS', DIRECTORY_SEPARATOR);
 
 /**

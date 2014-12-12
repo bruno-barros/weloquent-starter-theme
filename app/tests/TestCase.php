@@ -1,6 +1,42 @@
 <?php namespace Starter\Tests;
 
-class TestCase extends \Illuminate\Foundation\Testing\TestCase {
+//class ThemeTestCase extends \Illuminate\Foundation\Testing\TestCase {
+use Illuminate\Foundation\Testing\ApplicationTrait;
+
+class TestCase extends \PHPUnit_Framework_TestCase {
+
+	use ApplicationTrait;
+
+
+	/**
+	 * Setup the test environment.
+	 *
+	 * @return void
+	 */
+	public function setUp()
+	{
+		\WP_Mock::setUp();
+
+		if ( ! $this->app)
+		{
+			$this->app = $this->createApplication();
+
+			$this->client = $this->createClient();
+
+			$this->app->setRequestForConsoleEnvironment();
+
+			$this->app->boot();
+		}
+	}
+
+	public function tearDown() {
+
+		\WP_Mock::tearDown();
+		\Mockery::close();
+	}
+
+
+
 
 	/**
 	 * Creates the application.
@@ -16,8 +52,6 @@ class TestCase extends \Illuminate\Foundation\Testing\TestCase {
 		$paths = require SRC_PATH . '/bootstrap/paths.php';
 
 		$appInit = $paths['framework'] . '/Core/LaravelApplication.php';
-//		dd(file_exists($appInit));
-
 
 		return require $appInit;
 	}

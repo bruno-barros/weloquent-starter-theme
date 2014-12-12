@@ -10,13 +10,15 @@ use Starter\Tests\TestCase;
  */
 class ExampleTest extends TestCase{
 
+
+
 	/**
 	 * @test
 	 */
 	public function it_should_be_true()
 	{
-		dd('damaged');
-		$this->assertEquals(1, 1);
+		$this->assertTrue(true);
 	}
+
 
 }
