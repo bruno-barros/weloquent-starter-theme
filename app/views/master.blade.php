@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="pt-BR">
+<html <?php language_attributes()?>>
 <head>
 	<meta charset="UTF-8">
 
-	<title><?php wp_title() ?></title>
+	<title>{{ wp_title('&gt;', false, 'right' ) }}</title>
 
 	@include('partials.head')
 

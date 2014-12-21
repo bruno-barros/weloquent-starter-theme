@@ -1,7 +1,7 @@
 @extends('master')
-<?php
-// Layout define a page structure
-?>
+
+{{-- Home page structure --}}
+
 @section('body_middle')
 
  	@include('partials.header')
