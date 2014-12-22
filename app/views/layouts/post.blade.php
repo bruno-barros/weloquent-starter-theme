@@ -1,6 +1,6 @@
 @extends('master')
 
-{{-- Home page structure --}}
+{{-- Post page structure --}}
 
 @section('body_middle')
 
@@ -12,25 +12,15 @@
 
  			<div class="col-sm-4">
 
-				@section('menu')
-
-					{{-- Make sure you did configure the menu on admin --}}
-					{{-- Menu::render('primary') --}}
-
-				@show
-
 				@section('sidebar')
 
 					<?php dynamic_sidebar(); ?>
 
                 @show
 
-
  			</div>
 
  			<div class="col-sm-8">
-
-				@include('partials.orderCtrl')
 
  				@yield('main')
 

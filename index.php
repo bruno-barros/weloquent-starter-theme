@@ -1,8 +1,11 @@
-@extends('layouts.home')
+@if( is_home() )
+	@extends('layouts.home')
+@else
+	@extends('layouts.post')
+@endif
 
 
 @section('main')
-
 
 	@loop
 
@@ -16,9 +19,8 @@
 
 	@endloop
 
-
-
 @stop
+
 
 @section('sidebar')
 
