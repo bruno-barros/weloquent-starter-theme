@@ -9,7 +9,9 @@
 
 	@loop
 
-		<h2><a href="{{ the_permalink() }}">{{the_title()}}</a></h2>
+		@presenter(p, Starter\Presenters\PostPresenter)
+
+		<h2><a href="{{ $p->permalink }}">{{ $p->title }}</a></h2>
 
 		{{ the_content() }}
 

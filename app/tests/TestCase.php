@@ -1,6 +1,5 @@
 <?php namespace Starter\Tests;
 
-//class ThemeTestCase extends \Illuminate\Foundation\Testing\TestCase {
 use Illuminate\Foundation\Testing\ApplicationTrait;
 
 class TestCase extends \PHPUnit_Framework_TestCase {
