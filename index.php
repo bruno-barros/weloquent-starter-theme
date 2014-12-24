@@ -17,7 +17,7 @@
 			{{ $p->excerpt }}
 		@endif
 
-@emptyloop
+	@emptyloop
 
 		<p>404</p>
 
