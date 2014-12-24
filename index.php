@@ -1,19 +1,16 @@
-@if( is_home() )
-	@extends('layouts.home')
-@else
-	@extends('layouts.post')
-@endif
+@extends( is_home() ? 'layouts.home' : 'layouts.post' )
 
 
 @section('main')
+
 
 	@loop
 
 		@presenter(p, Starter\Presenters\PostPresenter)
 
 		<h2><a href="{{ $p->permalink }}">{{ $p->title }}</a></h2>
-
-		{{ the_content() }}
+		<small>{{ $p->date }} by {{ $p->author()->name }}</small>
+		{{ $p->excerpt }}
 
 	@emptyloop
 

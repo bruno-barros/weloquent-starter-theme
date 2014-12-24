@@ -30,6 +30,10 @@
 
  			<div class="col-sm-8">
 
+				@if(! is_home())
+					@include('partials.breadcrumb')
+				@endif
+
 				@include('partials.orderCtrl')
 
  				@yield('main')

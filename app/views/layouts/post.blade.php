@@ -22,7 +22,9 @@
 
  			<div class="col-sm-8">
 
- 				@yield('main')
+				@include('partials.breadcrumb')
+
+				@yield('main')
 
  			</div>
 

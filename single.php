@@ -3,20 +3,13 @@
 @section('main')
 
 
-
-	@loop
-
-		<h1 class="page-title">{{ the_title() }}</h1>
+	@presenter(p, Starter\Presenters\PostPresenter, $post, true)
 
 
-		{{ the_content() }}
 
+	<h1 class="page-title">{{ $p->title }}</h1>
 
-	@emptyloop
-
-		<h2>404</h2>
-
-	@endloop
+	{{ $p->content }}
 
 
 @stop
