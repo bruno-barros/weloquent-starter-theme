@@ -1,14 +1,18 @@
-<div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
-        Order
-        <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-        <li role="presentation">
-            <a role="menuitem" tabindex="-1" href="{{ URL::to('order/asc') }}">Ascendent</a>
-        </li>
-        <li role="presentation">
-            <a role="menuitem" tabindex="-1" href="{{ URL::to('order/desc') }}">Descendent</a>
-        </li>
-    </ul>
-</div>
+
+
+<p>Sort posts:
+<span class="btn-group" role="group">
+
+    <a href="{{ url('order/asc') }}"
+       class="btn btn-default {{ $orderDir == 'asc' ? 'active' : '' }}">
+        Older
+    </a>
+
+    <a href="{{ url('order/desc') }}"
+       class="btn btn-default {{ $orderDir == 'desc' ? 'active' : '' }}">
+        Newer
+    </a>
+
+</span>
+
+</p>

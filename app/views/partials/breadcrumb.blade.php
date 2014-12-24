@@ -1,7 +1,7 @@
 
 <ol class="breadcrumb">
 
-    @foreach(\Weloquent\Support\Breadcrumb::render() as $page)
+    @foreach(\Weloquent\Support\Breadcrumb::make() as $page)
 
         @if($page['url'])
 

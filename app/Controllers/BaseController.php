@@ -18,7 +18,7 @@ class BaseController {
 	 */
 	public function share($view, $data = null)
 	{
-		View::make($view, $data);
+		View::share($view, $data);
 	}
 
 } 

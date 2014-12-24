@@ -13,8 +13,7 @@ class HomeController extends BaseController{
 	 */
 	public function index($args = [], $request)
 	{
-//		dd($args);
-//		dd($request->getInner()->getOptions());
+		$this->share('orderDir', 'desc');
 	}
 
 } 

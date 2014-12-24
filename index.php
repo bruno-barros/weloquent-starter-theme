@@ -10,9 +10,14 @@
 
 		<h2><a href="{{ $p->permalink }}">{{ $p->title }}</a></h2>
 		<small>{{ $p->date }} by {{ $p->author()->name }}</small>
-		{{ $p->excerpt }}
 
-	@emptyloop
+		@if( is_page() || is_single() )
+			{{ $p->content }}
+		@else
+			{{ $p->excerpt }}
+		@endif
+
+@emptyloop
 
 		<p>404</p>
 
