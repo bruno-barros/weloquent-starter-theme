@@ -12,7 +12,7 @@ add_action('after_setup_theme', function ()
 	/**
 	 * remove Plugins updates
 	 */
-	add_filter('pre_site_transient_update_plugins', '__return_null');
+//	add_filter('pre_site_transient_update_plugins', '__return_null');
 
 	/**
 	 * Remove Themes updates

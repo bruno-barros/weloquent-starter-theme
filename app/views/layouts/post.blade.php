@@ -26,7 +26,9 @@
 
 				@yield('main')
 
- 			</div>
+				@include('partials.comments.show')
+
+			</div>
 
  		</div>
 
