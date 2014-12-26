@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: Regular page
+*/
+?>
 @extends('layouts.post')
 
 
