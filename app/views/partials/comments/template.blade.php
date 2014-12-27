@@ -10,6 +10,7 @@
     @if ( have_comments() )
 
         <div class="commentlist">
+
             {{ wp_list_comments([
                     'walker'            => null,
                     'max_depth'         => '',
@@ -27,6 +28,7 @@
                     'short_ping'        => false,
                     'echo'              => false
             ]) }}
+
         </div>
 
         @if ($wp_query->max_num_pages > 1)

@@ -1,6 +1,4 @@
 
-
-
 <div id="comment-<?php comment_ID() ?>"
 <?php comment_class(empty($args['has_children']) ? 'media' : 'media parent') ?>>
 
@@ -20,9 +18,9 @@
 
             <?php printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>' ), get_comment_author_link() ); ?>
 
-            @if ( $comment->comment_approved == '0' )
+            @if( $comment->comment_approved == '0' )
 
-                    <em class="comment-awaiting-moderation">
+                <em class="comment-awaiting-moderation">
                     {{ __( 'Your comment is awaiting moderation.' ) }}
                 </em>
                 <br />
@@ -34,8 +32,10 @@
                 <a href="{{ htmlspecialchars( get_comment_link( $comment->comment_ID ) ) }}">
                     <?php /* translators: 1: date, 2: time */
                     printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time() );
-                    ?></a>
+                    ?>
+                </a>
                 <?php edit_comment_link( __( '(Edit)' ), '  ', '' )?>
+
             </div>
 
             <?php comment_text(); ?>

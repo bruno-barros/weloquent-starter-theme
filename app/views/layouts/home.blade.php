@@ -38,6 +38,8 @@
 
  				@yield('main')
 
+				{{ \Weloquent\Support\Pagination::render() }}
+
  			</div>
 
  		</div>
