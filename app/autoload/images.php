@@ -64,13 +64,10 @@ add_filter('img_caption_shortcode', function ($val, $attr, $content = null)
 	// Add itemprop="contentURL" to image - Ugly hack
 	$content = str_replace('<img', '<img itemprop="contentURL"', $content);
 
-	// figure width removed
-	// style="width: ' . (0 + (int)$width) . 'px"
-
 	return '<figure id="' . $id .
 	'" aria-describedby="figcaption_' . $id .
 	'" class="wp-caption ' . esc_attr($align) .
-	'" itemscope itemtype="http://schema.org/ImageObject">' .
+	'" itemscope itemtype="http://schema.org/ImageObject" style="max-width: ' . (0 + (int)$width) . 'px">' .
 	do_shortcode($content) .
 	'<figcaption id="figcaption_' . $id .
 	'" class="wp-caption-text" itemprop="description">' . $caption .
