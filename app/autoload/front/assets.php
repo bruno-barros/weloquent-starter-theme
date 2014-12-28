@@ -5,7 +5,7 @@
  * ----------------------------------
  * @link https://github.com/Giuseppe-Mazzapica/Occipital
  *
- * Brain\Assets::addStyle( 'my-style' )
+ * Assets::addStyle( 'my-style' )
  *
  * ->src( Config::get('assets.css.url').'/layout.css' )
  *
@@ -29,6 +29,8 @@
  * });
  */
 
+use Weloquent\Facades\Assets;
+
 add_action('brain_loaded', function ()
 {
 	$env    = App::getFacadeApplication()['env'];
@@ -36,39 +38,44 @@ add_action('brain_loaded', function ()
 	$cssUrl = Config::get('assets.css.url');
 	$jsUrl  = Config::get('assets.js.url');
 
-	\Brain\Assets::addFrontStyle('bootstrap-style-front')
+	// provided assets to replace plugins injections
+	$providedCss = ['select2'];
+	$providedJs = ['select2'];
+
+	Assets::addFrontStyle('bootstrap-style-front')
 		->src($cssUrl . '/bootstrap.css')
 		->ver($ver)
+		->provide( $providedCss )
 		->condition(function (WP_Query $query, $user) use ($env)
 		{
-			return ($env === 'local') ? true : false;
+			return $env === 'local';
 		});
 
-	\Brain\Assets::addFrontStyle('layout-front')
+	Assets::addFrontStyle('layout-front')
 		->src($cssUrl . '/layout.css')
 		->deps(['bootstrap-style-front'])
 		->ver($ver)
 		->condition(function (WP_Query $query, $user) use ($env)
 		{
-			return ($env === 'local') ? true : false;
+			return $env === 'local';
 		});
 
-	\Brain\Assets::addFrontStyle('modules-front')
+	Assets::addFrontStyle('modules-front')
 		->src($cssUrl . '/modules.css')
 		->deps(['layout-front'])
 		->ver($ver)
 		->condition(function (WP_Query $query, $user) use ($env)
 		{
-			return ($env === 'local') ? true : false;
+			return $env === 'local';
 		});
 
-	\Brain\Assets::addFrontStyle('pages-front')
+	Assets::addFrontStyle('pages-front')
 		->src($cssUrl . '/pages.css')
 		->deps(['modules-front'])
 		->ver($ver)
 		->condition(function (WP_Query $query, $user) use ($env)
 		{
-			return ($env === 'local') ? true : false;
+			return $env === 'local';
 		});
 
 	/**
@@ -77,12 +84,13 @@ add_action('brain_loaded', function ()
 	 * ----------------------------------------------
 	 * Styles
 	 */
-	\Brain\Assets::addFrontStyle('styles-front')
+	Assets::addFrontStyle('styles-front')
 		->src($cssUrl . '/_global.css')
 		->ver($ver)
+		->provide( $providedCss )
 		->condition(function (WP_Query $query, $user) use ($env)
 		{
-			return ($env === 'production') ? true : false;
+			return $env === 'production';
 		});
 
 	/**
@@ -91,22 +99,23 @@ add_action('brain_loaded', function ()
 	 * ----------------------------------------------
 	 * Scripts
 	 */
-	\Brain\Assets::addFrontScript('bootstrap-script-front')
+	Assets::addFrontScript('bootstrap-script-front')
 		->src($jsUrl . '/bootstrap.min.js')
 		->deps(['jquery'])
 		->ver($ver)
+		->provide( $providedJs )
 		->condition(function (WP_Query $query, $user) use ($env)
 		{
-			return ($env === 'local') ? true : false;
+			return $env === 'local';
 		});
 
-	\Brain\Assets::addFrontScript('page-all-front')
+	Assets::addFrontScript('page-all-front')
 		->src($jsUrl . '/page.all.js')
 		->deps(['bootstrap-script-front'])
 		->ver($ver)
 		->condition(function (WP_Query $query, $user) use ($env)
 		{
-			return ($env === 'local') ? true : false;
+			return $env === 'local';
 		});
 
 	/**
@@ -115,13 +124,14 @@ add_action('brain_loaded', function ()
 	 * ----------------------------------------------
 	 * Scripts
 	 */
-	\Brain\Assets::addFrontScript('jquery-front')
+	Assets::addFrontScript('jquery-front')
 		->src($jsUrl . '/_global.js')
 		->provide(['jquery'])
 		->ver($ver)
+		->provide( $providedJs )
 		->condition(function (WP_Query $query, $user) use ($env)
 		{
-			return ($env === 'production') ? true : false;
+			return $env === 'production';
 		});
 
 });

@@ -33,9 +33,6 @@ add_filter('image_size_names_choose', function ($sizes)
  * & figcaption, microdata & wai-aria attributes
  * ----------------------------------------------------------
  *
- * Author: @joostkiens
- * Licensed under the MIT license
- *
  * @param  string $val Empty
  * @param  array $attr Shortcode attributes
  * @param  string $content Shortcode content
