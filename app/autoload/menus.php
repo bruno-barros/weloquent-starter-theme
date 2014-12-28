@@ -16,13 +16,11 @@
 Menu::add('primary', 'Primary menu',
 	array(
 		'theme_location'  => 'primary',
-		'menu'            => 'primary',
 		'container'       => 'div',
 		'container_class' => 'main-menu',
 		'container_id'    => '',
 		'menu_class'      => 'nav navbar-nav',
 		'menu_id'         => '',
-		'echo'            => false, // <== always false
 		'fallback_cb'     => 'wp_page_menu',
 		'before'          => '',
 		'after'           => '',

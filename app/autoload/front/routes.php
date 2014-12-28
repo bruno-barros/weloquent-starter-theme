@@ -43,19 +43,4 @@ add_action('brain_loaded', function ()
 		return $args;
 	});
 
-//	Route::add('/page/{num}', 'paginated_order_route', 1, array(
-//		'requirements' => ['num' => '[0-9]+'],
-//		'defaults'     => ['dir' => 'desc', 'num' => 1],
-//		'methods'      => array('GET'),
-//	))->query(function ($matches)
-//	{
-//		$args['orderby'] = 'date';
-//		$args['order']   = $matches['dir'];
-//		$args['paged']   = $matches['num'];
-//
-//		View::share('orderDir', 'desc');
-//
-//		return $args;
-//	});
-
 });

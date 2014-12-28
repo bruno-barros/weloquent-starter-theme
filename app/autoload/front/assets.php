@@ -38,7 +38,7 @@ add_action('brain_loaded', function ()
 	$cssUrl = Config::get('assets.css.url');
 	$jsUrl  = Config::get('assets.js.url');
 
-	// provided assets to replace plugins injections
+	// provided assets from plugins to be replaced
 	$providedCss = ['select2'];
 	$providedJs = ['select2'];
 
