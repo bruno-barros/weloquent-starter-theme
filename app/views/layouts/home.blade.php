@@ -30,9 +30,11 @@
 
  			<div class="col-sm-8">
 
-				@if(! is_home())
+				@unless(is_home())
+
 					@include('partials.breadcrumb')
-				@endif
+
+				@endunless
 
 				@include('partials.orderCtrl')
 

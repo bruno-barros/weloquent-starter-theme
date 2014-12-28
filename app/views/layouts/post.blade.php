@@ -26,7 +26,13 @@
 
 				@yield('main')
 
-				@include('partials.comments.show')
+				{{ \Weloquent\Support\Pagination::render() }}
+
+				@if(is_single())
+
+					@include('partials.comments.show')
+
+				@endif
 
 			</div>
 
