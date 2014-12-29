@@ -4,12 +4,12 @@
 <span class="btn-group" role="group">
 
     <a href="{{ url('order/asc') }}"
-       class="btn btn-default {{ $orderDir == 'asc' ? 'active' : '' }}">
+       class="btn btn-default {{ isset($orderDir) && $orderDir == 'asc' ? 'active' : '' }}">
         Older
     </a>
 
     <a href="{{ url('order/desc') }}"
-       class="btn btn-default {{ $orderDir == 'desc' ? 'active' : '' }}">
+       class="btn btn-default {{ !isset($orderDir) || $orderDir == 'desc' ? 'active' : '' }}">
         Newer
     </a>
 

@@ -24,7 +24,15 @@
 
 				@include('partials.breadcrumb')
 
-				@yield('main')
+				@if(post_password_required())
+
+					{{ get_the_password_form() }}
+
+				@else
+
+					@yield('main')
+
+				@endif
 
 				{{ \Weloquent\Support\Pagination::render() }}
 
