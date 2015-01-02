@@ -14,7 +14,7 @@
 				<div class="media">
 
 					@if($thumb = $p->thumb)
-						<div class="media-left"><img src="{{ $thumb }}" alt=" "/></div>
+						<div class="media-left"><img src="{{ $thumb }}" alt=" " style="width: 50px"/></div>
 					@endif
 
 					<div class="media-body">

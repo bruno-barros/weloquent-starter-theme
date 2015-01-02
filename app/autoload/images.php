@@ -28,6 +28,17 @@ add_filter('image_size_names_choose', function ($sizes)
 });
 
 /**
+ * ---------------------------------------------------
+ * Sanitize uploaded files
+ * ---------------------------------------------------
+ */
+add_filter( 'sanitize_file_name', function($filename){
+
+	return filter_var($filename, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+
+}, 10 );
+
+/**
  * ----------------------------------------------------------
  * Improves the WordPress caption shortcode with HTML5 figure
  * & figcaption, microdata & wai-aria attributes

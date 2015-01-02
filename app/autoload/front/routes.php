@@ -9,7 +9,11 @@ use Weloquent\Facades\Route;
 add_action('brain_loaded', function ()
 {
 
-	Route::add('/', 'home', 1)->bindToMethod('Starter\Controllers\HomeController', 'index');
+	/**
+	 * Bind a class to home path
+	 * Using App::mak() will you will get dependency injection by Laravel
+	 */
+	Route::add('/', 'home', 1)->bindToMethod(App::make('Starter\Controllers\HomeController'), 'index');
 
 	/**
 	 * Overwrite the main query
@@ -42,5 +46,19 @@ add_action('brain_loaded', function ()
 
 		return $args;
 	});
+
+//	$this->app['config']['session.cookie']
+//	dd(App::getFacadeApplication()['config']['session.cookie']);
+//exit;
+	Route::add('/contact')->before(function(){
+//		dd(App::getFacadeApplication()['session.store']);
+//		\Illuminate\Support\Facades\Session::put('errors', 'value3');
+	})->after(function(){
+
+	});
+
+	Route::add('/contact/send', 'post_contact')
+	->methods(['POST'])
+	->bindToMethod(App::make('Starter\Controllers\ContactController'), 'postSend');
 
 });

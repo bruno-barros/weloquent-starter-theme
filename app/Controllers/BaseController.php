@@ -1,5 +1,6 @@
 <?php namespace Starter\Controllers;
 
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 
 /**
@@ -8,7 +9,7 @@ use Illuminate\Support\Facades\View;
  * @author Bruno Barros  <bruno@brunobarros.com>
  * @copyright	Copyright (c) 2014 Bruno Barros
  */
-class BaseController {
+class BaseController extends Controller{
 
 	/**
 	 * Helper function to share data on views
