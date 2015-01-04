@@ -1,11 +1,10 @@
 <?php  namespace Starter\Controllers;
 
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Starter\Controllers\BaseController as BC;
-use Illuminate\Support\Facades\Input;
-use Weloquent\Facades\Route;
 
 
 /**
@@ -23,7 +22,6 @@ class ContactController extends BC{
 	public function postSend()
 	{
 
-
 		$fields = Input::all();
 
 		/**
@@ -37,25 +35,17 @@ class ContactController extends BC{
 			)
 		);
 
-//		dd(Redirect::to('contact'));
+		/**
+		 * if fails save error messages and redirect back
+		 */
 		if($validator->fails())
 		{
-//			$messages = $validator->messages();
-//			dd($messages->first('email'));
-//			share('errors', $messages);
+			Session::flash('errors', $validator->messages());
 
-//			return Redirect::away('contact')->withErrors($validator);
+			Redirect::back();
 		}
 
-//		dd(\App::getFacadeApplication()['session.store']);
-
-//		dd(Session::getId());
-
-		Session::put('errors', 'value');
-		wp_redirect( url('contact'), 302 );
-		exit;
-
-//		return Redirect::to('contact');
+		Redirect::to('contact');
 	}
 
 }

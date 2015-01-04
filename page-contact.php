@@ -15,18 +15,28 @@
 
 		{{ $p->content }}
 
-@dd(Session::all())
 
 		<form action="{{ url('contact/send') }}" method="post">
 
 			<div class="form-group">
 				<label for="field_name">Name</label>
-				<input id="field_name" name="name" class="form-control" type="text"/>
+
+				{{ Form::text('name', null, ['id' => 'field_name', 'class' => 'form-control']) }}
+
+				@if(Session::has('errors') && Session::get('errors')->has('name'))
+				<label for="field_name" class="error">{{ Session::get('errors')->first('name') }}</label>
+				@endif
+
 			</div>
 
 			<div class="form-group">
 				<label for="field_email">E-mail</label>
-				<input id="field_email" name="email" class="form-control" type="email"/>
+
+				{{ Form::email('email', null, ['id' => 'field_email', 'class' => 'form-control']) }}
+
+				@if(Session::has('errors') && Session::get('errors')->has('email'))
+				<label for="field_email" class="error">{{ Session::get('errors')->first('email') }}</label>
+				@endif
 			</div>
 
 			<div class="form-group">
