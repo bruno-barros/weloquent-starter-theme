@@ -19,11 +19,10 @@ To populate your database with dummy data, install the WordPress importer plugin
 1. [Download the Starter theme](https://github.com/bruno-barros/weloquent-starter-theme/archive/master.zip)
 2. Create a `starter` folder on your `themes` folder
 3. Ensure your `composer.json` load the `Starter` namespace:
-```
 	"autoload": {
         "psr-4": {
           "Starter\\": "src/themes/starter/app"
         }
     },
-```
+
 4. Go to admin page and set up the Starter theme
