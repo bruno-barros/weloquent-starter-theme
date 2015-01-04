@@ -26,4 +26,7 @@ To populate your database with dummy data, install the WordPress importer plugin
         }
     },
 ```
-4) Go to admin page and set up the Starter theme
+4) Update your `.env*.php` at `APP_THEME`<br>
+5) Set up the theme on admin page<br>
+- Activate the Starter theme<br>
+- Create a menu to primary position<br>
