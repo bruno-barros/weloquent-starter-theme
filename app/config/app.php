@@ -100,7 +100,6 @@ return [
 
 	'providers'       => [
 
-		'Illuminate\Auth\AuthServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
 		'Illuminate\Cookie\CookieServiceProvider',
 		'Illuminate\Database\DatabaseServiceProvider',
@@ -120,7 +119,9 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
+//		'Illuminate\Events\EventServiceProvider',
 
+		'Weloquent\Providers\AuthServiceProvider',
 		'Weloquent\Providers\SessionServiceProvider',
 		'Weloquent\Providers\ViewServiceProvider',
 		'Weloquent\Providers\WelServiceProvider',

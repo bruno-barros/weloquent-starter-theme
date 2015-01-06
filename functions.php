@@ -6,7 +6,9 @@
  */
 
 // keep it to avoid run on Laravel environment
-if(defined('WP_USE_THEMES') && ! WP_USE_THEMES)
+use Weloquent\Facades\Hooks;
+
+if (defined('WP_USE_THEMES') && !WP_USE_THEMES)
 {
 	return;
 }
