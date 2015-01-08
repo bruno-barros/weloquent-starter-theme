@@ -31,108 +31,103 @@
 
 use Weloquent\Facades\Assets;
 
-add_action('brain_loaded', function ()
-{
-	$env    = App::getFacadeApplication()['env'];
-	$ver    = Config::get('assets.ver');
-	$cssUrl = Config::get('assets.css.url');
-	$jsUrl  = Config::get('assets.js.url');
+$env    = App::getFacadeApplication()['env'];
+$ver    = Config::get('assets.ver');
+$cssUrl = Config::get('assets.css.url');
+$jsUrl  = Config::get('assets.js.url');
 
-	// provided assets from plugins to be replaced
-	$providedCss = ['select2'];
-	$providedJs = ['select2'];
+// provided assets from plugins to be replaced
+$providedCss = ['select2'];
+$providedJs  = ['select2'];
 
-	Assets::addFrontStyle('bootstrap-style-front')
-		->src($cssUrl . '/bootstrap.css')
-		->ver($ver)
-		->provide( $providedCss )
-		->condition(function (WP_Query $query, $user) use ($env)
-		{
-			return $env === 'local';
-		});
+Assets::addFrontStyle('bootstrap-style-front')
+	->src($cssUrl . '/bootstrap.css')
+	->ver($ver)
+	->provide($providedCss)
+	->condition(function (WP_Query $query, $user) use ($env)
+	{
+		return $env === 'local';
+	});
 
-	Assets::addFrontStyle('layout-front')
-		->src($cssUrl . '/layout.css')
-		->deps(['bootstrap-style-front'])
-		->ver($ver)
-		->condition(function (WP_Query $query, $user) use ($env)
-		{
-			return $env === 'local';
-		});
+Assets::addFrontStyle('layout-front')
+	->src($cssUrl . '/layout.css')
+	->deps(['bootstrap-style-front'])
+	->ver($ver)
+	->condition(function (WP_Query $query, $user) use ($env)
+	{
+		return $env === 'local';
+	});
 
-	Assets::addFrontStyle('modules-front')
-		->src($cssUrl . '/modules.css')
-		->deps(['layout-front'])
-		->ver($ver)
-		->condition(function (WP_Query $query, $user) use ($env)
-		{
-			return $env === 'local';
-		});
+Assets::addFrontStyle('modules-front')
+	->src($cssUrl . '/modules.css')
+	->deps(['layout-front'])
+	->ver($ver)
+	->condition(function (WP_Query $query, $user) use ($env)
+	{
+		return $env === 'local';
+	});
 
-	Assets::addFrontStyle('pages-front')
-		->src($cssUrl . '/pages.css')
-		->deps(['modules-front'])
-		->ver($ver)
-		->condition(function (WP_Query $query, $user) use ($env)
-		{
-			return $env === 'local';
-		});
+Assets::addFrontStyle('pages-front')
+	->src($cssUrl . '/pages.css')
+	->deps(['modules-front'])
+	->ver($ver)
+	->condition(function (WP_Query $query, $user) use ($env)
+	{
+		return $env === 'local';
+	});
 
-	/**
-	 * ----------------------------------------------
-	 * Assets on PRODUCTION environment
-	 * ----------------------------------------------
-	 * Styles
-	 */
-	Assets::addFrontStyle('styles-front')
-		->src($cssUrl . '/_global.css')
-		->ver($ver)
-		->provide( $providedCss )
-		->condition(function (WP_Query $query, $user) use ($env)
-		{
-			return $env === 'production';
-		});
+/**
+ * ----------------------------------------------
+ * Assets on PRODUCTION environment
+ * ----------------------------------------------
+ * Styles
+ */
+Assets::addFrontStyle('styles-front')
+	->src($cssUrl . '/_global.css')
+	->ver($ver)
+	->provide($providedCss)
+	->condition(function (WP_Query $query, $user) use ($env)
+	{
+		return $env === 'production';
+	});
 
-	/**
-	 * ----------------------------------------------
-	 * Assets on LOCAL environment
-	 * ----------------------------------------------
-	 * Scripts
-	 */
-	Assets::addFrontScript('bootstrap-script-front')
-		->src($jsUrl . '/bootstrap.min.js')
-		->deps(['jquery'])
-		->ver($ver)
-		->provide( $providedJs )
-		->condition(function (WP_Query $query, $user) use ($env)
-		{
-			return $env === 'local';
-		});
+/**
+ * ----------------------------------------------
+ * Assets on LOCAL environment
+ * ----------------------------------------------
+ * Scripts
+ */
+Assets::addFrontScript('bootstrap-script-front')
+	->src($jsUrl . '/bootstrap.min.js')
+	->deps(['jquery'])
+	->ver($ver)
+	->provide($providedJs)
+	->condition(function (WP_Query $query, $user) use ($env)
+	{
+		return $env === 'local';
+	});
 
-	Assets::addFrontScript('page-all-front')
-		->src($jsUrl . '/page.all.js')
-		->deps(['bootstrap-script-front'])
-		->ver($ver)
-		->condition(function (WP_Query $query, $user) use ($env)
-		{
-			return $env === 'local';
-		});
+Assets::addFrontScript('page-all-front')
+	->src($jsUrl . '/page.all.js')
+	->deps(['bootstrap-script-front'])
+	->ver($ver)
+	->condition(function (WP_Query $query, $user) use ($env)
+	{
+		return $env === 'local';
+	});
 
-	/**
-	 * ----------------------------------------------
-	 * Assets on PRODUCTION environment
-	 * ----------------------------------------------
-	 * Scripts
-	 */
-	Assets::addFrontScript('jquery-front')
-		->src($jsUrl . '/_global.js')
-		->provide(['jquery'])
-		->ver($ver)
-		->provide( $providedJs )
-		->condition(function (WP_Query $query, $user) use ($env)
-		{
-			return $env === 'production';
-		});
-
-});
-
+/**
+ * ----------------------------------------------
+ * Assets on PRODUCTION environment
+ * ----------------------------------------------
+ * Scripts
+ */
+Assets::addFrontScript('jquery-front')
+	->src($jsUrl . '/_global.js')
+	->provide(['jquery'])
+	->ver($ver)
+	->provide($providedJs)
+	->condition(function (WP_Query $query, $user) use ($env)
+	{
+		return $env === 'production';
+	});
