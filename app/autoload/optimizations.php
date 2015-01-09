@@ -1,6 +1,8 @@
 <?php
 /**
- *
+ * ----------------------------------------------------
+ * Optimized .htaccess from WordPress Codex
+ * ----------------------------------------------------
  */
 
 add_filter('mod_rewrite_rules', function ($rules)
@@ -90,9 +92,6 @@ FileETag none
 
 # END w.eloquent\n\n
 EOD;
-
-//	var_dump($weloquentRules . $rules);
-//	exit;
 
 	return $weloquentRules . $rules;
 });

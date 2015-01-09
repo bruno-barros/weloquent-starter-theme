@@ -119,7 +119,6 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-//		'Illuminate\Events\EventServiceProvider',
 
 		'Weloquent\Providers\AuthServiceProvider',
 		'Weloquent\Providers\SessionServiceProvider',
