@@ -3,6 +3,8 @@
  * ----------------------------------------------------
  * Optimized .htaccess from WordPress Codex
  * ----------------------------------------------------
+ *
+ * @link http://codex.wordpress.org/htaccess
  */
 
 add_filter('mod_rewrite_rules', function ($rules)
