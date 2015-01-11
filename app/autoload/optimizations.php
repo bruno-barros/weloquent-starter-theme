@@ -87,7 +87,7 @@ FileETag none
 <IfModule mod_rewrite.c>
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
-	RedirectMatch 301 /cms/$ /cms/wp-admin
+	RedirectMatch 301 (.*)/cms/$ $1/cms/wp-admin
 </IfModule>
 
 # END w.eloquent\n\n
