@@ -22,7 +22,12 @@
 
  			<div class="col-sm-8">
 
-				@include('partials.breadcrumb')
+				
+				@if(is_single())
+
+					@include('partials.breadcrumb')
+
+				@endif
 
 				@if(post_password_required())
 
