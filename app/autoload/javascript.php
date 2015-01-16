@@ -11,6 +11,3 @@ GlobalJs::add('url', url('/'));
 
 // home path
 GlobalJs::add('path', dirname(SRC_PATH));
-
-// Ajax endpoint
-GlobalJs::add('ajaxurl', admin_url('admin-ajax.php'));
