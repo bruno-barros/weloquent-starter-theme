@@ -15,7 +15,6 @@
  */
 Menu::add('primary', 'Primary menu',
 	array(
-		'theme_location'  => 'primary',
 		'container'       => 'div',
 		'container_class' => 'main-menu',
 		'container_id'    => '',
@@ -29,8 +28,9 @@ Menu::add('primary', 'Primary menu',
 		'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 		'depth'           => 0,
 		'walker'          => new \Weloquent\Support\Navigation\BootstrapMenuWalker
-	));
-
+	))
+	->before('<li><a href="#">Before link</a></li>')
+	->after('<li><a href="#">After link</a></li>');
 
 /*
  * Default configurations
