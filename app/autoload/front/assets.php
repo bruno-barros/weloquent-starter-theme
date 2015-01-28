@@ -97,6 +97,10 @@ Assets::addFrontStyle('styles-front')
  * ----------------------------------------------
  * Scripts
  */
+add_action('wp_enqueue_scripts', function ()
+{
+	wp_enqueue_script('jquery', false, [], false, false);
+});
 Assets::addFrontScript('bootstrap-script-front')
 	->src($jsUrl . '/bootstrap.min.js')
 	->deps(['jquery'])
