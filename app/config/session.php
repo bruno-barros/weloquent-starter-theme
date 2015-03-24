@@ -12,9 +12,9 @@ return array(
 	 * you may specify any of the other wonderful drivers provided here.
 	 *
 	 * Supported: "file", "cookie", "database", "apc",
-	 * "memcached", "redis", "array"
+	 * "memcached", "redis", "array", "raw"
 	 */
-	'driver'          => 'file',
+	'driver'          => 'raw',
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -23,7 +23,7 @@ return array(
 	 *
 	 * To activate give it a namespace, or false
 	 */
-	'raw' => false,
+	'raw' => 'weloquent',
 
 	/**
 	 * --------------------------------------------------------------------------

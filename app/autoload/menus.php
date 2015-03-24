@@ -30,7 +30,8 @@ Menu::add('primary', 'Primary menu',
 		'walker'          => new \Weloquent\Support\Navigation\BootstrapMenuWalker
 	))
 	->before('<li><a href="#">Before link</a></li>')
-	->after('<li><a href="#">After link</a></li>');
+	->after('<li><a href="#">After link</a></li>')
+	->remember(5);
 
 /*
  * Default configurations
