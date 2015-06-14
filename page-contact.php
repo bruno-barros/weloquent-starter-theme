@@ -21,22 +21,19 @@
 			<div class="form-group">
 				<label for="field_name">Name</label>
 
-				{{ Form::text('name', null, ['id' => 'field_name', 'class' => 'form-control']) }}
+                <input type="text" name="name" id="field_name" class="form-control" value="{{ set_value('name') }}"/>
 
-				@if(Session::has('errors') && Session::get('errors')->has('name'))
-				<label for="field_name" class="error">{{ Session::get('errors')->first('name') }}</label>
-				@endif
+                {{ form_field_error('name') }}
 
 			</div>
 
 			<div class="form-group">
 				<label for="field_email">E-mail</label>
 
-				{{ Form::email('email', null, ['id' => 'field_email', 'class' => 'form-control']) }}
+                <input type="email" name="email" id="field_email" class="form-control" value="{{ set_value('email') }}"/>
 
-				@if(Session::has('errors') && Session::get('errors')->has('email'))
-				<label for="field_email" class="error">{{ Session::get('errors')->first('email') }}</label>
-				@endif
+                {{ form_field_error('email') }}
+
 			</div>
 
 			<div class="form-group">
@@ -44,6 +41,7 @@
 			</div>
 
 		</form>
+        <?php Session::save() ?>
 
 	@emptyloop
 

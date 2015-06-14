@@ -23,8 +23,9 @@ class ContactController extends BC{
 	{
 
 		$fields = Input::all();
+        Session::flash('fields', $fields);
 
-		/**
+        /**
 		 * @link http://laravel.com/docs/4.2/validation
 		 */
 		$validator = Validator::make(

@@ -14,7 +14,7 @@ return array(
 	 * Supported: "file", "cookie", "database", "apc",
 	 * "memcached", "redis", "array", "raw"
 	 */
-	'driver'          => 'raw',
+	'driver'          => 'file',
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -23,7 +23,7 @@ return array(
 	 *
 	 * To activate give it a namespace, or false
 	 */
-	'raw' => 'weloquent',
+	'raw' => false,
 
 	/**
 	 * --------------------------------------------------------------------------
