@@ -31,7 +31,7 @@ Menu::add('primary', 'Primary menu',
 	))
 	->before('<li><a href="#">Before link</a></li>')
 	->after('<li><a href="#">After link</a></li>')
-	->remember(5);
+	->remember(0);
 
 /*
  * Default configurations

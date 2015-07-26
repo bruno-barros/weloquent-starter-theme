@@ -21,7 +21,7 @@ require $root . '/src/bootstrap/start.php';
  * Load PHPUnit helpers
  * ------------------------------------------------
  */
-if(file_exists($root . '/vendor/phpunit/phpunit/PHPUnit/Framework/Assert/Functions.php'))
-{
-	require_once $root . '/vendor/phpunit/phpunit/PHPUnit/Framework/Assert/Functions.php';
-}
+//if(file_exists($root . '/vendor/phpunit/phpunit/src/Framework/Assert/Functions.php'))
+//{
+//	require_once $root . '/vendor/phpunit/phpunit/src/Framework/Assert/Functions.php';
+//}
